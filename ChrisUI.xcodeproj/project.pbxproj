@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		836F34F42EE35EE2005133A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F32EE35EE2005133A1 /* GoogleSignIn */; };
+		836F34F62EE35EE2005133A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F52EE35EE2005133A1 /* GoogleSignInSwift */; };
+		836F34F92EE36109005133A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F82EE36109005133A1 /* FacebookLogin */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		836F34AF2EE1EC32005133A1 /* ChrisUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChrisUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		836F34BD2EE1F11F005133A1 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +30,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836F34F42EE35EE2005133A1 /* GoogleSignIn in Frameworks */,
+				836F34F62EE35EE2005133A1 /* GoogleSignInSwift in Frameworks */,
+				836F34F92EE36109005133A1 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +42,7 @@
 		836F34A62EE1EC32005133A1 = {
 			isa = PBXGroup;
 			children = (
+				836F34BD2EE1F11F005133A1 /* CLAUDE.md */,
 				836F34B12EE1EC32005133A1 /* ChrisUI */,
 				836F34B02EE1EC32005133A1 /* Products */,
 			);
@@ -65,6 +76,9 @@
 			);
 			name = ChrisUI;
 			packageProductDependencies = (
+				836F34F32EE35EE2005133A1 /* GoogleSignIn */,
+				836F34F52EE35EE2005133A1 /* GoogleSignInSwift */,
+				836F34F82EE36109005133A1 /* FacebookLogin */,
 			);
 			productName = ChrisUI;
 			productReference = 836F34AF2EE1EC32005133A1 /* ChrisUI.app */;
@@ -94,6 +108,10 @@
 			);
 			mainGroup = 836F34A62EE1EC32005133A1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				836F34F22EE35EE2005133A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				836F34F72EE36109005133A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 836F34B02EE1EC32005133A1 /* Products */;
 			projectDirPath = "";
@@ -332,6 +350,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		836F34F22EE35EE2005133A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		836F34F72EE36109005133A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		836F34F32EE35EE2005133A1 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 836F34F22EE35EE2005133A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		836F34F52EE35EE2005133A1 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 836F34F22EE35EE2005133A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		836F34F82EE36109005133A1 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 836F34F72EE36109005133A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 836F34A72EE1EC32005133A1 /* Project object */;
 }
