@@ -8,7 +8,7 @@ A comprehensive SwiftUI component library designed to accelerate iOS app develop
 
 ## Overview
 
-ChrisUI provides a rich collection of 50+ reusable SwiftUI components that follow Apple's Human Interface Guidelines and modern SwiftUI best practices. Each component is fully documented, accessible, and supports both light and dark modes.
+ChrisUI provides a rich collection of 50+ reusable SwiftUI components that follow Apple's Human Interface Guidelines and modern SwiftUI best practices. Each component is fully documented, accessible, and supports both light and dark modes.  This is a library, so each of the components are meant to be copied to your project directly for customization.  This is not a framework that you import into your project.
 
 ## Features
 
@@ -86,31 +86,12 @@ ChrisUI provides a rich collection of 50+ reusable SwiftUI components that follo
 - Xcode 15.0+
 - Swift 5.9+
 
-## Installation
-
-### Swift Package Manager
-
-Add ChrisUI to your project through Xcode:
-
-1. File > Add Package Dependencies
-2. Enter the repository URL
-3. Select the version you want to use
-
-Or add it to your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/yourusername/ChrisUI.git", from: "1.0.0")
-]
-```
-
 ## Quick Start
 
 ### Basic Usage
 
 ```swift
 import SwiftUI
-import ChrisUI
 
 struct ContentView: View {
     @State private var email = ""
@@ -149,7 +130,6 @@ struct ContentView: View {
 
 ```swift
 import SwiftUI
-import ChrisUI
 
 struct LoginView: View {
     @State private var viewModel = LoginViewModel()
@@ -164,7 +144,6 @@ struct LoginView: View {
 
 ```swift
 import SwiftUI
-import ChrisUI
 
 struct AnalyticsView: View {
     let data = [
@@ -197,7 +176,6 @@ struct AnalyticsView: View {
 
 ```swift
 import SwiftUI
-import ChrisUI
 
 struct ProductView: View {
     @State private var quantity = 1
@@ -431,8 +409,6 @@ Contributions are welcome! Please follow these guidelines:
 - [x] Phase 1: Foundation (Authentication, Forms, Buttons, Cards)
 - [x] Phase 2: Enhanced Features (Lists, Charts, E-commerce)
 - [x] Phase 3: Polish (Documentation, Demos, Navigation)
-- [ ] Phase 4: Advanced Features (Animations, Gestures, Media)
-- [ ] Phase 5: Package Distribution (SPM, Documentation Site)
 
 ## License
 

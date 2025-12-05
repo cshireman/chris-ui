@@ -10,11 +10,13 @@
 		836F34F42EE35EE2005133A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F32EE35EE2005133A1 /* GoogleSignIn */; };
 		836F34F62EE35EE2005133A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F52EE35EE2005133A1 /* GoogleSignInSwift */; };
 		836F34F92EE36109005133A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 836F34F82EE36109005133A1 /* FacebookLogin */; };
+		83A4D1682EE3A4D800A71646 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 83A4D1672EE3A4D800A71646 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		836F34AF2EE1EC32005133A1 /* ChrisUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChrisUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836F34BD2EE1F11F005133A1 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		83A4D1672EE3A4D800A71646 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -42,6 +44,7 @@
 		836F34A62EE1EC32005133A1 = {
 			isa = PBXGroup;
 			children = (
+				83A4D1672EE3A4D800A71646 /* README.md */,
 				836F34BD2EE1F11F005133A1 /* CLAUDE.md */,
 				836F34B12EE1EC32005133A1 /* ChrisUI */,
 				836F34B02EE1EC32005133A1 /* Products */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A4D1682EE3A4D800A71646 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
