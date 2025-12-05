@@ -7,6 +7,7 @@ xcuserdata/
 
 ## Project-specific
 CLAUDE.md
+.claude/
 
 ## Obj-C/Swift specific
 *.hmap
