@@ -50,11 +50,11 @@ struct TextFieldDemo: View {
                 .foregroundStyle(.white)
                 .cornerRadius(12)
                 .disabled(!viewModel.emailValidation.isValid ||
-                         !viewModel.passwordValidation.isValid ||
-                         !viewModel.usernameValidation.isValid)
+                    !viewModel.passwordValidation.isValid ||
+                    !viewModel.usernameValidation.isValid)
                 .opacity((viewModel.emailValidation.isValid &&
-                         viewModel.passwordValidation.isValid &&
-                         viewModel.usernameValidation.isValid) ? 1.0 : 0.6)
+                        viewModel.passwordValidation.isValid &&
+                        viewModel.usernameValidation.isValid) ? 1.0 : 0.6)
             }
             .padding()
         }

@@ -5,10 +5,10 @@
 //  Created by Chris Shireman on 12/4/25.
 //
 
-import SwiftUI
 import AuthenticationServices
-import GoogleSignInSwift
 import FacebookLogin
+import GoogleSignInSwift
+import SwiftUI
 
 /// Social authentication provider types
 public enum SocialAuthProvider {
@@ -53,7 +53,7 @@ public struct SocialAuthButton: View {
         if provider == .apple {
             SignInWithAppleButton(.continue) { request in
                 request.requestedScopes = [.fullName, .email]
-            } onCompletion: { result in
+            } onCompletion: { _ in
                 action()
             }
             .frame(height: 50)
@@ -118,13 +118,13 @@ struct FacebookSignInButton: UIViewRepresentable {
     let permissions: [String]
     let action: () -> Void
 
-    func makeUIView(context: Context) -> FBLoginButton {
+    func makeUIView(context _: Context) -> FBLoginButton {
         let button = FBLoginButton()
         button.permissions = permissions
         return button
     }
 
-    func updateUIView(_ uiView: FBLoginButton, context: Context) {}
+    func updateUIView(_: FBLoginButton, context _: Context) {}
 }
 
 #Preview("Individual Buttons") {

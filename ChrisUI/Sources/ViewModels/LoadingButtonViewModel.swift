@@ -5,8 +5,8 @@
 //  Created by Chris Shireman on 12/4/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 @Observable
 class LoadingButtonViewModel {

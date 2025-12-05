@@ -17,7 +17,7 @@ public enum ValidationState {
     }
 
     var errorMessage: String? {
-        if case .invalid(let message) = self { return message }
+        if case let .invalid(message) = self { return message }
         return nil
     }
 }

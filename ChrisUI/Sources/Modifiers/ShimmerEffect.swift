@@ -24,7 +24,7 @@ public struct ShimmerModifier: ViewModifier {
                                 gradient: Gradient(colors: [
                                     .clear,
                                     .white.opacity(0.6),
-                                    .clear
+                                    .clear,
                                 ]),
                                 startPoint: .leading,
                                 endPoint: .trailing
@@ -38,7 +38,7 @@ public struct ShimmerModifier: ViewModifier {
             .onAppear {
                 withAnimation(
                     .linear(duration: duration)
-                    .repeatForever(autoreverses: bounce)
+                        .repeatForever(autoreverses: bounce)
                 ) {
                     phase = 1
                 }
@@ -46,9 +46,9 @@ public struct ShimmerModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     /// Applies a shimmer effect to the view
-    public func shimmer(duration: Double = 1.5, bounce: Bool = false) -> some View {
+    func shimmer(duration: Double = 1.5, bounce: Bool = false) -> some View {
         modifier(ShimmerModifier(duration: duration, bounce: bounce))
     }
 }

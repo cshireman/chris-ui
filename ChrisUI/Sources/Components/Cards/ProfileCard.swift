@@ -15,7 +15,7 @@ public struct ProfileCard: View {
     let onTap: (() -> Void)?
 
     var showChevron: Bool = true
-    var backgroundColor: Color = Color(.systemBackground)
+    var backgroundColor: Color = .init(.systemBackground)
 
     public init(
         name: String,
@@ -219,7 +219,7 @@ public struct ProfileCardExtended: View {
             stats: [
                 .init(label: "Posts", value: "128"),
                 .init(label: "Followers", value: "1.2K"),
-                .init(label: "Following", value: "456")
+                .init(label: "Following", value: "456"),
             ],
             onTap: { print("Profile tapped") }
         )
@@ -230,7 +230,7 @@ public struct ProfileCardExtended: View {
             avatarImage: "person.crop.circle.fill",
             stats: [
                 .init(label: "Projects", value: "24"),
-                .init(label: "Reviews", value: "89")
+                .init(label: "Reviews", value: "89"),
             ],
             onTap: { print("Profile tapped") }
         )

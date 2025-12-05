@@ -13,9 +13,9 @@ public struct IconButton: View {
     let action: () -> Void
 
     var size: CGFloat = 44
-    var backgroundColor: Color = Color(.systemGray6)
+    var backgroundColor: Color = .init(.systemGray6)
     var foregroundColor: Color = .primary
-    var borderColor: Color? = nil
+    var borderColor: Color?
     var borderWidth: CGFloat = 0
     var shadow: Bool = false
 
@@ -54,7 +54,6 @@ public struct IconButton: View {
                 .shadow(color: shadow ? .black.opacity(0.1) : .clear, radius: 4, y: 2)
         }
         .buttonStyle(ScaleButtonStyle())
-
     }
 }
 

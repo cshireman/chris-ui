@@ -20,7 +20,7 @@ extension EnvironmentValues {
     ///     router.navigate(to: .loginScreen)
     /// }
     /// ```
-    @Entry var navigationRouter: NavigationRouter = NavigationRouter()
+    @Entry var navigationRouter: NavigationRouter = .init()
 }
 
 // MARK: - View Extensions

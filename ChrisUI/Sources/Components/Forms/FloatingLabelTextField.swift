@@ -28,7 +28,7 @@ public struct FloatingLabelTextField: View {
         validation: ValidationState = .idle
     ) {
         self.placeholder = placeholder
-        self._text = text
+        _text = text
         self.keyboardType = keyboardType
         self.autocapitalization = autocapitalization
         self.isSecure = isSecure
@@ -182,4 +182,3 @@ public struct FloatingLabelTextField: View {
     }
     .padding()
 }
-

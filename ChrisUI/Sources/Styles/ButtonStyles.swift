@@ -55,28 +55,28 @@ public struct PressableButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == ScaleButtonStyle {
-    public static var scale: ScaleButtonStyle {
+public extension ButtonStyle where Self == ScaleButtonStyle {
+    static var scale: ScaleButtonStyle {
         ScaleButtonStyle()
     }
 
-    public static func scale(_ amount: CGFloat) -> ScaleButtonStyle {
+    static func scale(_ amount: CGFloat) -> ScaleButtonStyle {
         ScaleButtonStyle(scaleAmount: amount)
     }
 }
 
-extension ButtonStyle where Self == FadeButtonStyle {
-    public static var fade: FadeButtonStyle {
+public extension ButtonStyle where Self == FadeButtonStyle {
+    static var fade: FadeButtonStyle {
         FadeButtonStyle()
     }
 
-    public static func fade(_ opacity: Double) -> FadeButtonStyle {
+    static func fade(_ opacity: Double) -> FadeButtonStyle {
         FadeButtonStyle(opacity: opacity)
     }
 }
 
-extension ButtonStyle where Self == PressableButtonStyle {
-    public static var pressable: PressableButtonStyle {
+public extension ButtonStyle where Self == PressableButtonStyle {
+    static var pressable: PressableButtonStyle {
         PressableButtonStyle()
     }
 }

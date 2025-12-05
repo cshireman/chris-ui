@@ -5,8 +5,8 @@
 //  Created by Chris Shireman on 12/4/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 @Observable
 class TextFieldViewModel {
@@ -36,7 +36,7 @@ class TextFieldViewModel {
     }
 
     func submit() {
-        guard emailValidation.isValid && passwordValidation.isValid && usernameValidation.isValid else {
+        guard emailValidation.isValid, passwordValidation.isValid, usernameValidation.isValid else {
             print("Form validation failed")
             return
         }

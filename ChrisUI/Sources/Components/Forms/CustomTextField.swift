@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Validation state for text fields
 
-
 /// A customizable text field with validation states and styling
 public struct CustomTextField: View {
     let title: String
@@ -42,7 +41,7 @@ public struct CustomTextField: View {
     ) {
         self.title = title
         self.placeholder = placeholder
-        self._text = text
+        _text = text
         self.validation = validation
         self.keyboardType = keyboardType
         self.autocapitalization = autocapitalization

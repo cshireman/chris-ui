@@ -16,8 +16,8 @@ public struct LoadingButton: View {
 
     var style: ButtonStyleType = .filled
     var cornerRadius: CGFloat = 12
-    var height: CGFloat? = nil
-    var icon: String? = nil
+    var height: CGFloat?
+    var icon: String?
     var backgroundColor: Color = .accentColor
     var foregroundColor: Color = .white
 
@@ -39,7 +39,7 @@ public struct LoadingButton: View {
         action: @escaping () -> Void
     ) {
         self.title = title
-        self._isLoading = isLoading
+        _isLoading = isLoading
         self.style = style
         self.cornerRadius = cornerRadius
         self.height = height

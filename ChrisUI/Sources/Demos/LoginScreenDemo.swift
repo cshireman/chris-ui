@@ -12,7 +12,7 @@ struct LoginScreenDemo: View {
 
     var body: some View {
         LoginScreen(viewModel)
-        .navigationTitle("Login Screen")
-        .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Login Screen")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -13,24 +13,29 @@ import Foundation
 /// verification of navigation paths and eliminating string-based navigation errors.
 enum Route: Hashable {
     // MARK: - Authentication
+
     case loginScreen
     case signUpScreen
     case socialAuth
 
     // MARK: - Forms & Input
+
     case customTextFields
     case floatingLabelFields
 
     // MARK: - Buttons
+
     case gradientButtons
     case iconButtons
     case loadingButtons
 
     // MARK: - Cards
+
     case cardViews
     case profileCards
 
     // MARK: - Effects & Utilities
+
     case shimmerEffect
     case buttonStyles
 

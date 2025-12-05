@@ -12,13 +12,13 @@ public struct GradientButton: View {
     let title: String
     let action: () -> Void
 
-    var gradient: Gradient = Gradient(colors: [.blue, .purple])
+    var gradient: Gradient = .init(colors: [.blue, .purple])
     var startPoint: UnitPoint = .leading
     var endPoint: UnitPoint = .trailing
     var cornerRadius: CGFloat = 12
-    var height: CGFloat? = nil
+    var height: CGFloat?
     var isDisabled: Bool = false
-    var icon: String? = nil
+    var icon: String?
 
     public init(
         title: String,

@@ -8,8 +8,7 @@
 import Foundation
 
 /// Utility class for common validation operations
-public struct Validator {
-
+public enum Validator {
     /// Validates email format
     public static func validateEmail(_ email: String) -> ValidationState {
         guard !email.isEmpty else {

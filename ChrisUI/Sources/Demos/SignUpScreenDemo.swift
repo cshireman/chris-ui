@@ -12,7 +12,7 @@ struct SignUpScreenDemo: View {
 
     var body: some View {
         SignUpScreen(viewModel)
-        .navigationTitle("Sign Up Screen")
-        .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Sign Up Screen")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }

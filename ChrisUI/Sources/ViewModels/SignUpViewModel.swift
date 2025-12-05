@@ -5,8 +5,8 @@
 //  Created by Chris Shireman on 12/4/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 @Observable
 public class SignUpViewModel {
@@ -29,10 +29,10 @@ public class SignUpViewModel {
 
     var isFormValid: Bool {
         !fullName.isEmpty &&
-        !email.isEmpty &&
-        passwordsMatch &&
-        agreedToTerms &&
-        password.count >= 8
+            !email.isEmpty &&
+            passwordsMatch &&
+            agreedToTerms &&
+            password.count >= 8
     }
 
     var showPasswordLengthError: Bool {

@@ -46,13 +46,11 @@ struct ContentView: View {
             SignUpScreenDemo()
         case .socialAuth:
             SocialAuthDemo()
-
         // Forms & Input
         case .customTextFields:
             TextFieldDemo()
         case .floatingLabelFields:
             FloatingLabelDemo()
-
         // Buttons
         case .gradientButtons:
             GradientButtonDemo()
@@ -60,13 +58,11 @@ struct ContentView: View {
             IconButtonDemo()
         case .loadingButtons:
             LoadingButtonDemo()
-
         // Cards
         case .cardViews:
             CardViewDemo()
         case .profileCards:
             ProfileCardDemo()
-
         // Effects & Utilities
         case .shimmerEffect:
             ShimmerEffectDemo()
