@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing SocialAuthButton and SocialAuthButtonGroup components
+///
+/// This demo presents social authentication buttons for Apple, Google, and Facebook,
+/// both individually and grouped together with a divider.
 struct SocialAuthDemo: View {
     @State private var viewModel = SocialAuthViewModel()
 

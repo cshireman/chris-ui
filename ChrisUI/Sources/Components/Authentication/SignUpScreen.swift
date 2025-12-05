@@ -7,10 +7,38 @@
 
 import SwiftUI
 
-/// A customizable sign-up screen component with validation
+/// A customizable sign-up screen component with comprehensive validation
+///
+/// This component provides a complete registration interface with full name, email,
+/// password, and password confirmation fields. It includes real-time validation,
+/// password strength requirements, and terms & conditions acceptance.
+///
+/// Example:
+/// ```swift
+/// struct MyView: View {
+///     @State private var viewModel = SignUpViewModel()
+///
+///     var body: some View {
+///         SignUpScreen(viewModel)
+///     }
+/// }
+/// ```
+///
+/// Features:
+/// - Full name input field
+/// - Email validation
+/// - Password strength validation (minimum 8 characters)
+/// - Password confirmation matching
+/// - Password visibility toggles
+/// - Terms & conditions checkbox
+/// - Loading state during registration
+/// - Login navigation link
 public struct SignUpScreen: View {
     @State var viewModel: SignUpViewModel = .init()
 
+    /// Creates a sign-up screen with an optional view model
+    /// - Parameter viewModel: Optional view model to control the screen state.
+    ///   If nil, a default view model will be created.
     public init(_ viewModel: SignUpViewModel? = nil) {
         if let viewModel {
             self.viewModel = viewModel
@@ -41,6 +69,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The header section displaying the title and subtitle
     private var header: some View {
         VStack(spacing: 8) {
             Text(viewModel.title)
@@ -54,6 +83,7 @@ public struct SignUpScreen: View {
         .padding(.top, 40)
     }
 
+    /// The full name input field with word capitalization
     private var fullNameField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Full Name")
@@ -69,6 +99,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The email input field with email keyboard type
     private var emailField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Email")
@@ -86,6 +117,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The password input field with visibility toggle and length validation
     private var passwordField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Password")
@@ -118,6 +150,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The password confirmation field with visibility toggle and match validation
     private var confirmPasswordField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Confirm Password")
@@ -150,6 +183,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The terms and conditions acceptance checkbox
     private var termsCheckbox: some View {
         HStack(alignment: .top, spacing: 12) {
             Button(action: { viewModel.agreedToTerms.toggle() }) {
@@ -172,6 +206,7 @@ public struct SignUpScreen: View {
         }
     }
 
+    /// The primary sign-up button with loading state and form validation
     private var signUpButton: some View {
         Button(action: {
             Task.detached {
@@ -197,6 +232,7 @@ public struct SignUpScreen: View {
         .opacity(viewModel.isFormValid ? 1.0 : 0.6)
     }
 
+    /// The login navigation link for existing users
     private var loginLink: some View {
         HStack(spacing: 4) {
             Text("Already have an account?")

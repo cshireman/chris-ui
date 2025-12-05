@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing ProfileCard and ProfileCardExtended components
+///
+/// This demo displays both basic profile cards and extended versions with statistics,
+/// demonstrating different use cases for user profile displays.
 struct ProfileCardDemo: View {
     var body: some View {
         ScrollView {

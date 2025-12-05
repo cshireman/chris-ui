@@ -7,9 +7,31 @@
 
 import SwiftUI
 
-/// Validation state for text fields
-
-/// A customizable text field with validation states and styling
+/// A customizable text field with validation states and comprehensive styling options
+///
+/// This component provides a feature-rich text input field with built-in validation display,
+/// icon support, password visibility toggle, and customizable styling. It automatically
+/// displays validation icons and error messages based on the validation state.
+///
+/// Example:
+/// ```swift
+/// CustomTextField(
+///     title: "Email",
+///     placeholder: "Enter your email",
+///     text: $email,
+///     validation: .valid,
+///     keyboardType: .emailAddress,
+///     leadingIcon: "envelope"
+/// )
+/// ```
+///
+/// Features:
+/// - Title label and placeholder text
+/// - Validation state indicators (idle, valid, invalid)
+/// - Leading and trailing icon support
+/// - Secure text entry with visibility toggle
+/// - Automatic keyboard type configuration
+/// - Error message display
 public struct CustomTextField: View {
     let title: String
     let placeholder: String
@@ -26,6 +48,19 @@ public struct CustomTextField: View {
 
     @State private var isPasswordVisible: Bool = false
 
+    /// Creates a custom text field with validation support
+    /// - Parameters:
+    ///   - title: The label displayed above the field
+    ///   - placeholder: Placeholder text shown when empty
+    ///   - text: Binding to the text value
+    ///   - validation: Current validation state (default: idle)
+    ///   - keyboardType: Keyboard type to display (default: default)
+    ///   - autocapitalization: Auto-capitalization behavior (default: sentences)
+    ///   - isSecure: Whether to use secure text entry (default: false)
+    ///   - showVisibilityToggle: Show password visibility toggle for secure fields (default: false)
+    ///   - leadingIcon: Optional SF Symbol to display before the text
+    ///   - trailingIcon: Optional SF Symbol to display after the text
+    ///   - onTrailingIconTap: Action to execute when trailing icon is tapped
     public init(
         title: String,
         placeholder: String,
@@ -52,6 +87,7 @@ public struct CustomTextField: View {
         self.onTrailingIconTap = onTrailingIconTap
     }
 
+    /// Determines the border color based on the validation state
     private var borderColor: Color {
         switch validation {
         case .idle:

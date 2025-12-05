@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the GradientButton component
+///
+/// This demo displays various configurations of gradient buttons including
+/// different color schemes, gradient directions, icons, and disabled states.
 struct GradientButtonDemo: View {
     var body: some View {
         ScrollView {

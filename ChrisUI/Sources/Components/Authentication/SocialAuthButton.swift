@@ -10,12 +10,18 @@ import FacebookLogin
 import GoogleSignInSwift
 import SwiftUI
 
-/// Social authentication provider types
+/// Supported social authentication provider types
+///
+/// Each provider integrates with their respective authentication SDK:
+/// - Apple: Sign in with Apple using AuthenticationServices
+/// - Google: Google Sign-In SDK
+/// - Facebook: Facebook Login SDK
 public enum SocialAuthProvider {
     case apple
     case google
     case facebook
 
+    /// Human-readable name of the provider
     var displayName: String {
         switch self {
         case .apple:
@@ -28,17 +34,34 @@ public enum SocialAuthProvider {
     }
 }
 
-/// A customizable social authentication button
+/// A customizable social authentication button that integrates with platform-specific SDKs
+///
+/// This component provides pre-styled buttons for Apple, Google, and Facebook sign-in.
+/// Each provider uses its native SDK for authentication, ensuring platform compliance
+/// and consistent user experience.
+///
+/// Example:
+/// ```swift
+/// SocialAuthButton(provider: .apple) {
+///     print("Apple login initiated")
+/// }
+/// ```
 public struct SocialAuthButton: View {
     let provider: SocialAuthProvider
     let action: () -> Void
     var style: ButtonStyle = .filled
 
+    /// Visual style options for the button
     public enum ButtonStyle {
         case filled
         case outlined
     }
 
+    /// Creates a social authentication button
+    /// - Parameters:
+    ///   - provider: The authentication provider (Apple, Google, or Facebook)
+    ///   - style: Visual style of the button (filled or outlined)
+    ///   - action: Callback executed when authentication completes
     public init(
         provider: SocialAuthProvider,
         style: ButtonStyle = .filled,
@@ -65,13 +88,32 @@ public struct SocialAuthButton: View {
     }
 }
 
-/// Container for multiple social auth buttons
+/// Container for displaying multiple social authentication buttons with an optional divider
+///
+/// This component groups social auth buttons together with a customizable divider,
+/// commonly used to separate social login from email/password authentication.
+///
+/// Example:
+/// ```swift
+/// SocialAuthButtonGroup(
+///     providers: [.apple, .google, .facebook],
+///     onProviderSelected: { provider in
+///         handleAuthentication(with: provider)
+///     }
+/// )
+/// ```
 public struct SocialAuthButtonGroup: View {
     let providers: [SocialAuthProvider]
     let onProviderSelected: (SocialAuthProvider) -> Void
     var style: SocialAuthButton.ButtonStyle = .filled
     var dividerText: String = "OR"
 
+    /// Creates a grouped social authentication button container
+    /// - Parameters:
+    ///   - providers: Array of authentication providers to display
+    ///   - style: Visual style applied to all buttons
+    ///   - dividerText: Text displayed in the divider (default: "OR")
+    ///   - onProviderSelected: Callback executed when a provider is selected
     public init(
         providers: [SocialAuthProvider],
         style: SocialAuthButton.ButtonStyle = .filled,
@@ -114,10 +156,15 @@ public struct SocialAuthButtonGroup: View {
 
 extension SocialAuthProvider: Hashable {}
 
+/// UIViewRepresentable wrapper for Facebook's native login button
+///
+/// This component wraps the Facebook SDK's FBLoginButton to make it compatible
+/// with SwiftUI. It handles the native Facebook login flow and permissions.
 struct FacebookSignInButton: UIViewRepresentable {
     let permissions: [String]
     let action: () -> Void
 
+    /// Creates the Facebook login button with specified permissions
     func makeUIView(context _: Context) -> FBLoginButton {
         let button = FBLoginButton()
         button.permissions = permissions

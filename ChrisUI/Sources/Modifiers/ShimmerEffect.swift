@@ -7,13 +7,25 @@
 
 import SwiftUI
 
-/// A shimmer/loading effect modifier
+/// A shimmer/loading effect modifier that animates a light gradient across a view
+///
+/// This modifier creates a shimmering animation commonly used for skeleton screens
+/// and loading states. The effect simulates a light source moving across the view.
+///
+/// Example:
+/// ```swift
+/// RoundedRectangle(cornerRadius: 12)
+///     .fill(Color(.systemGray5))
+///     .frame(height: 100)
+///     .shimmer()
+/// ```
 public struct ShimmerModifier: ViewModifier {
     @State private var phase: CGFloat = 0
 
     var duration: Double = 1.5
     var bounce: Bool = false
 
+    /// Creates the view with shimmer overlay animation
     public func body(content: Content) -> some View {
         content
             .overlay(
@@ -46,8 +58,17 @@ public struct ShimmerModifier: ViewModifier {
     }
 }
 
+/// View extension for applying shimmer effects
 public extension View {
     /// Applies a shimmer effect to the view
+    ///
+    /// This creates an animated light gradient that moves across the view,
+    /// commonly used for skeleton loading screens.
+    ///
+    /// - Parameters:
+    ///   - duration: Animation duration in seconds (default: 1.5)
+    ///   - bounce: Whether to bounce the animation back and forth (default: false)
+    /// - Returns: A view with the shimmer effect applied
     func shimmer(duration: Double = 1.5, bounce: Bool = false) -> some View {
         modifier(ShimmerModifier(duration: duration, bounce: bounce))
     }

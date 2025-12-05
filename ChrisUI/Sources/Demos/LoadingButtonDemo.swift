@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the LoadingButton component
+///
+/// This demo demonstrates loading button behavior with different styles (filled, outlined),
+/// async operations, and loading state management.
 struct LoadingButtonDemo: View {
     @State private var viewModel = LoadingButtonViewModel()
 

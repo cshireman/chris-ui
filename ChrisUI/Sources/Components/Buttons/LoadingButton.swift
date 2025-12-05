@@ -7,7 +7,31 @@
 
 import SwiftUI
 
-/// A button that displays loading state
+/// A button that displays loading state with a progress indicator
+///
+/// This component automatically shows a loading spinner when performing async operations.
+/// It prevents multiple taps while loading and supports filled, outlined, and plain styles.
+///
+/// Example:
+/// ```swift
+/// struct MyView: View {
+///     @State private var isLoading = false
+///
+///     var body: some View {
+///         LoadingButton(
+///             title: "Submit",
+///             isLoading: $isLoading,
+///             action: {
+///                 isLoading = true
+///                 Task {
+///                     await performOperation()
+///                     isLoading = false
+///                 }
+///             }
+///         )
+///     }
+/// }
+/// ```
 public struct LoadingButton: View {
     let title: String
     let action: () -> Void
@@ -21,12 +45,24 @@ public struct LoadingButton: View {
     var backgroundColor: Color = .accentColor
     var foregroundColor: Color = .white
 
+    /// Visual style options for the loading button
     public enum ButtonStyleType {
         case filled
         case outlined
         case plain
     }
 
+    /// Creates a loading button
+    /// - Parameters:
+    ///   - title: The button title text
+    ///   - isLoading: Binding to control the loading state
+    ///   - style: Visual style of the button (default: filled)
+    ///   - cornerRadius: Corner radius of the button (default: 12)
+    ///   - height: Optional fixed height (default: nil)
+    ///   - icon: Optional SF Symbol to display when not loading
+    ///   - backgroundColor: Background color for filled style or border/text for outlined (default: accentColor)
+    ///   - foregroundColor: Text color for filled style (default: white)
+    ///   - action: Callback executed when the button is tapped (only when not loading)
     public init(
         title: String,
         isLoading: Binding<Bool>,
@@ -49,6 +85,7 @@ public struct LoadingButton: View {
         self.action = action
     }
 
+    /// Determines the background color based on the button style
     private var buttonBackground: Color {
         switch style {
         case .filled:
@@ -58,6 +95,7 @@ public struct LoadingButton: View {
         }
     }
 
+    /// Determines the foreground color based on the button style
     private var buttonForeground: Color {
         switch style {
         case .filled:

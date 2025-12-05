@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing custom button styles
+///
+/// This demo presents the scale, fade, and pressable button styles,
+/// demonstrating different tactile feedback options for button interactions.
 struct ButtonStyleDemo: View {
     var body: some View {
         ScrollView {

@@ -8,6 +8,19 @@
 import SwiftUI
 
 /// A card component for displaying user profile information
+///
+/// A pre-styled card optimized for displaying user profiles with an avatar,
+/// name, subtitle, and optional chevron indicator. Commonly used in lists,
+/// settings screens, or user directories.
+///
+/// Example:
+/// ```swift
+/// ProfileCard(
+///     name: "John Doe",
+///     subtitle: "Software Engineer",
+///     onTap: { print("Profile tapped") }
+/// )
+/// ```
 public struct ProfileCard: View {
     let name: String
     let subtitle: String?
@@ -17,6 +30,14 @@ public struct ProfileCard: View {
     var showChevron: Bool = true
     var backgroundColor: Color = .init(.systemBackground)
 
+    /// Creates a profile card
+    /// - Parameters:
+    ///   - name: The user's name or title
+    ///   - subtitle: Optional subtitle (e.g., job title, description)
+    ///   - avatarImage: Optional SF Symbol name for the avatar (default: person.circle.fill)
+    ///   - showChevron: Whether to show the trailing chevron indicator (default: true)
+    ///   - backgroundColor: Background color of the card (default: system background)
+    ///   - onTap: Optional action to execute when the card is tapped
     public init(
         name: String,
         subtitle: String? = nil,
@@ -85,7 +106,25 @@ public struct ProfileCard: View {
     }
 }
 
-/// Extended profile card with additional stats
+/// Extended profile card with additional statistics display
+///
+/// An enhanced version of ProfileCard that includes a statistics section,
+/// commonly used in social media profiles or user dashboards to display
+/// metrics like followers, posts, or reviews.
+///
+/// Example:
+/// ```swift
+/// ProfileCardExtended(
+///     name: "John Doe",
+///     subtitle: "Software Engineer",
+///     stats: [
+///         .init(label: "Posts", value: "128"),
+///         .init(label: "Followers", value: "1.2K"),
+///         .init(label: "Following", value: "456")
+///     ],
+///     onTap: { print("Profile tapped") }
+/// )
+/// ```
 public struct ProfileCardExtended: View {
     let name: String
     let subtitle: String?
@@ -93,17 +132,29 @@ public struct ProfileCardExtended: View {
     let stats: [ProfileStat]
     let onTap: (() -> Void)?
 
+    /// Represents a single statistic displayed in the profile card
     public struct ProfileStat: Identifiable {
         public let id = UUID()
         public let label: String
         public let value: String
 
+        /// Creates a profile statistic
+        /// - Parameters:
+        ///   - label: The label for the statistic (e.g., "Posts", "Followers")
+        ///   - value: The value to display (e.g., "128", "1.2K")
         public init(label: String, value: String) {
             self.label = label
             self.value = value
         }
     }
 
+    /// Creates an extended profile card with statistics
+    /// - Parameters:
+    ///   - name: The user's name or title
+    ///   - subtitle: Optional subtitle (e.g., job title, location)
+    ///   - avatarImage: Optional SF Symbol name for the avatar
+    ///   - stats: Array of statistics to display
+    ///   - onTap: Optional action to execute when the card is tapped
     public init(
         name: String,
         subtitle: String? = nil,

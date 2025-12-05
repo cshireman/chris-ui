@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the CardView component
+///
+/// This demo presents various card configurations including basic cards,
+/// styled cards with custom backgrounds and borders, and cards with enhanced shadows.
 struct CardViewDemo: View {
     var body: some View {
         ScrollView {

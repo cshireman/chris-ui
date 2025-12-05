@@ -8,9 +8,35 @@
 import SwiftUI
 
 /// A customizable login screen component with email/password authentication
+///
+/// This component provides a complete login interface with email and password fields,
+/// password visibility toggle, forgot password link, and loading states. It follows
+/// modern iOS design patterns with clean styling and proper accessibility support.
+///
+/// Example:
+/// ```swift
+/// struct MyView: View {
+///     @State private var viewModel = LoginViewModel()
+///
+///     var body: some View {
+///         LoginScreen(viewModel)
+///     }
+/// }
+/// ```
+///
+/// Features:
+/// - Email and password input fields
+/// - Password visibility toggle
+/// - Forgot password action
+/// - Loading state during authentication
+/// - Sign up navigation link
+/// - Automatic field validation
 public struct LoginScreen: View {
     @State var viewModel: LoginViewModel = .init()
 
+    /// Creates a login screen with an optional view model
+    /// - Parameter viewModel: Optional view model to control the screen state.
+    ///   If nil, a default view model will be created.
     public init(_ viewModel: LoginViewModel? = nil) {
         if let viewModel {
             self.viewModel = viewModel
@@ -39,6 +65,7 @@ public struct LoginScreen: View {
         }
     }
 
+    /// The header section displaying the title and subtitle
     private var header: some View {
         VStack(spacing: 8) {
             Text(viewModel.title)
@@ -52,6 +79,7 @@ public struct LoginScreen: View {
         .padding(.top, 40)
     }
 
+    /// The email input field with appropriate keyboard type and validation
     private var emailField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Email")
@@ -69,6 +97,7 @@ public struct LoginScreen: View {
         }
     }
 
+    /// The password input field with visibility toggle
     private var passwordField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Password")
@@ -95,6 +124,7 @@ public struct LoginScreen: View {
         }
     }
 
+    /// The forgot password link positioned on the trailing edge
     private var forgotPassword: some View {
         HStack {
             Spacer()
@@ -106,6 +136,7 @@ public struct LoginScreen: View {
         }
     }
 
+    /// The primary login button with loading state indicator
     private var loginButton: some View {
         Button(action: {
             Task.detached {
@@ -131,6 +162,7 @@ public struct LoginScreen: View {
         .opacity((viewModel.email.isEmpty || viewModel.password.isEmpty) ? 0.6 : 1.0)
     }
 
+    /// The sign up navigation link for new users
     private var signUpLink: some View {
         HStack(spacing: 4) {
             Text("Don't have an account?")

@@ -63,6 +63,67 @@ struct ContentView: View {
             CardViewDemo()
         case .profileCards:
             ProfileCardDemo()
+        // Lists & Collections
+        case .pullToRefreshList:
+            PullToRefreshListDemo()
+        case .infiniteScrollList:
+            InfiniteScrollListDemo()
+        case .swipeableListRow:
+            SwipeableListRowDemo()
+        case .expandableList:
+            ExpandableListDemo()
+        case .gridLayout:
+            GridLayoutDemo()
+        case .horizontalScrollPicker:
+            HorizontalScrollPickerDemo()
+        case .reorderableList:
+            ReorderableListDemo()
+        case .emptyStateView:
+            EmptyStateViewDemo()
+        // Charts & Visualizations
+        case .lineChart:
+            if #available(iOS 16.0, *) {
+                LineChartDemo()
+            } else {
+                Text("Line Chart requires iOS 16+")
+            }
+        case .barChart:
+            if #available(iOS 16.0, *) {
+                BarChartDemo()
+            } else {
+                Text("Bar Chart requires iOS 16+")
+            }
+        case .pieChart:
+            PieChartDemo()
+        case .donutChart:
+            DonutChartDemo()
+        case .progressRing:
+            ProgressRingDemo()
+        case .sparkline:
+            SparklineDemo()
+        case .gaugeView:
+            GaugeViewDemo()
+        case .heatMap:
+            HeatMapDemo()
+        // E-commerce
+        case .productGrid:
+            ProductGridDemo()
+        case .addToCartButton:
+            AddToCartButtonDemo()
+        case .quantitySelector:
+            QuantitySelectorDemo()
+        case .priceTag:
+            PriceTagDemo()
+        case .discountBadge:
+            DiscountBadgeDemo()
+        case .sizeSelector:
+            SizeSelectorDemo()
+        case .colorSwatch:
+            ColorSwatchDemo()
+        case .checkoutProgress:
+            CheckoutProgressDemo()
+        case .orderStatus:
+            OrderStatusDemo()
         // Effects & Utilities
         case .shimmerEffect:
             ShimmerEffectDemo()
@@ -100,6 +161,40 @@ private struct ComponentListView: View {
             Section("Cards") {
                 NavigationRow(route: .cardViews)
                 NavigationRow(route: .profileCards)
+            }
+
+            Section("Lists & Collections") {
+                NavigationRow(route: .pullToRefreshList)
+                NavigationRow(route: .infiniteScrollList)
+                NavigationRow(route: .swipeableListRow)
+                NavigationRow(route: .expandableList)
+                NavigationRow(route: .gridLayout)
+                NavigationRow(route: .horizontalScrollPicker)
+                NavigationRow(route: .reorderableList)
+                NavigationRow(route: .emptyStateView)
+            }
+
+            Section("Charts & Visualizations") {
+                NavigationRow(route: .lineChart)
+                NavigationRow(route: .barChart)
+                NavigationRow(route: .pieChart)
+                NavigationRow(route: .donutChart)
+                NavigationRow(route: .progressRing)
+                NavigationRow(route: .sparkline)
+                NavigationRow(route: .gaugeView)
+                NavigationRow(route: .heatMap)
+            }
+
+            Section("E-commerce") {
+                NavigationRow(route: .productGrid)
+                NavigationRow(route: .addToCartButton)
+                NavigationRow(route: .quantitySelector)
+                NavigationRow(route: .priceTag)
+                NavigationRow(route: .discountBadge)
+                NavigationRow(route: .sizeSelector)
+                NavigationRow(route: .colorSwatch)
+                NavigationRow(route: .checkoutProgress)
+                NavigationRow(route: .orderStatus)
             }
 
             Section("Effects & Utilities") {

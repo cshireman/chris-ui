@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the IconButton component
+///
+/// This demo displays various icon button configurations including different
+/// sizes, colors, styles, and use cases like favorites, actions, and navigation.
 struct IconButtonDemo: View {
     var body: some View {
         ScrollView {

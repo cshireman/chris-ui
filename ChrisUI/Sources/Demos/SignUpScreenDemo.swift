@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the SignUpScreen component
+///
+/// This demo presents the SignUpScreen component with full validation,
+/// demonstrating password matching, terms acceptance, and form validation.
 struct SignUpScreenDemo: View {
     @State private var viewModel = SignUpViewModel()
 

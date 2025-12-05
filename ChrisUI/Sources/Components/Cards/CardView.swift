@@ -8,17 +8,55 @@
 import SwiftUI
 
 /// An elevated container card with shadow and customizable styling
+///
+/// A versatile card component that provides a clean, elevated container for content.
+/// Supports extensive customization including background colors, shadows, borders,
+/// corner radius, and padding.
+///
+/// Example:
+/// ```swift
+/// CardView {
+///     VStack {
+///         Text("Title")
+///             .font(.headline)
+///         Text("Description")
+///             .font(.subheadline)
+///     }
+/// }
+/// ```
+///
+/// Advanced usage with customization:
+/// ```swift
+/// CardView(
+///     backgroundColor: .blue.opacity(0.1),
+///     cornerRadius: 20,
+///     borderColor: .blue,
+///     borderWidth: 2
+/// ) {
+///     Text("Custom styled card")
+/// }
+/// ```
 public struct CardView<Content: View>: View {
     let content: Content
 
     private var backgroundColor: Color
     private var cornerRadius: CGFloat
-    private var shadowRadius: CGFloat = 4
+    private var shadowRadius: CGFloat
     private var shadowColor: Color
     private var padding: CGFloat
     private var borderColor: Color?
     private var borderWidth: CGFloat
 
+    /// Creates a card view with customizable styling
+    /// - Parameters:
+    ///   - backgroundColor: The background color of the card (default: system background)
+    ///   - cornerRadius: The corner radius of the card (default: 16)
+    ///   - shadowRadius: The blur radius of the shadow (default: 4)
+    ///   - shadowColor: The color of the shadow (default: black with 10% opacity)
+    ///   - padding: Internal padding applied to the content (default: 16)
+    ///   - borderColor: Optional border color (default: nil)
+    ///   - borderWidth: Width of the border if borderColor is provided (default: 0)
+    ///   - content: The content to display inside the card
     public init(
         backgroundColor: Color = Color(.systemBackground),
         cornerRadius: CGFloat = 16,

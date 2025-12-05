@@ -7,7 +7,29 @@
 
 import SwiftUI
 
-/// Material Design-style floating label text field
+/// Material Design-style floating label text field with smooth animations
+///
+/// This component implements the Material Design floating label pattern where
+/// the placeholder animates to become a label above the field when focused or filled.
+/// It provides a modern, space-efficient alternative to traditional labeled inputs.
+///
+/// Example:
+/// ```swift
+/// FloatingLabelTextField(
+///     placeholder: "Email",
+///     text: $email,
+///     keyboardType: .emailAddress,
+///     autocapitalization: .never,
+///     validation: emailValidation
+/// )
+/// ```
+///
+/// Features:
+/// - Smooth label animation on focus/blur
+/// - Validation state with colored borders
+/// - Secure text entry support
+/// - Customizable keyboard types
+/// - Error message display
 public struct FloatingLabelTextField: View {
     let placeholder: String
     @Binding var text: String
@@ -19,6 +41,14 @@ public struct FloatingLabelTextField: View {
 
     @FocusState private var isFocused: Bool
 
+    /// Creates a floating label text field
+    /// - Parameters:
+    ///   - placeholder: The placeholder/label text
+    ///   - text: Binding to the text value
+    ///   - keyboardType: Keyboard type to display (default: default)
+    ///   - autocapitalization: Auto-capitalization behavior (default: sentences)
+    ///   - isSecure: Whether to use secure text entry (default: false)
+    ///   - validation: Current validation state (default: idle)
     public init(
         placeholder: String,
         text: Binding<String>,
@@ -35,10 +65,12 @@ public struct FloatingLabelTextField: View {
         self.validation = validation
     }
 
+    /// Determines whether the label should float above the field
     private var shouldFloat: Bool {
         isFocused || !text.isEmpty
     }
 
+    /// Determines the border color based on focus and validation state
     private var borderColor: Color {
         if isFocused {
             return focusedValidationColor
@@ -54,10 +86,12 @@ public struct FloatingLabelTextField: View {
         }
     }
 
+    /// Determines the label color based on focus state
     private var labelColor: Color {
         isFocused ? focusedValidationColor : .secondary
     }
 
+    /// Determines the accent color when focused based on validation state
     private var focusedValidationColor: Color {
         switch validation {
         case .idle, .valid:

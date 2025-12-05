@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the shimmer effect modifier
+///
+/// This demo displays shimmer animations on various shapes and layouts,
+/// demonstrating skeleton loading screen patterns commonly used during data fetching.
 struct ShimmerEffectDemo: View {
     var body: some View {
         ScrollView {

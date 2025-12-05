@@ -7,7 +7,23 @@
 
 import SwiftUI
 
-/// A circular icon button with customizable styling
+/// A circular icon button with customizable styling and scale animation
+///
+/// A versatile icon button component that displays an SF Symbol in a circular
+/// container. Commonly used for actions like favorites, bookmarks, close buttons,
+/// or floating action buttons.
+///
+/// Example:
+/// ```swift
+/// IconButton(
+///     icon: "heart.fill",
+///     size: 56,
+///     backgroundColor: .red,
+///     foregroundColor: .white,
+///     shadow: true,
+///     action: { print("Favorite tapped") }
+/// )
+/// ```
 public struct IconButton: View {
     let icon: String
     let action: () -> Void
@@ -19,6 +35,16 @@ public struct IconButton: View {
     var borderWidth: CGFloat = 0
     var shadow: Bool = false
 
+    /// Creates a circular icon button
+    /// - Parameters:
+    ///   - icon: SF Symbol name for the icon
+    ///   - size: Diameter of the circular button (default: 44)
+    ///   - backgroundColor: Background color of the button (default: systemGray6)
+    ///   - foregroundColor: Icon color (default: primary)
+    ///   - borderColor: Optional border color (default: nil)
+    ///   - borderWidth: Border width if borderColor is provided (default: 0)
+    ///   - shadow: Whether to apply a shadow effect (default: false)
+    ///   - action: Callback executed when the button is tapped
     public init(
         icon: String,
         size: CGFloat = 44,

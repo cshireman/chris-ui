@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the FloatingLabelTextField component
+///
+/// This demo presents Material Design-style floating label text fields with
+/// smooth animations, validation states, and various input types.
 struct FloatingLabelDemo: View {
     @State private var viewModel = FloatingLabelViewModel()
 

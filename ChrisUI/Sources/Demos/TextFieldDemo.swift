@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Demo view showcasing the CustomTextField component
+///
+/// This demo displays custom text fields with real-time validation for email,
+/// password, and username inputs, demonstrating validation states and error messages.
 struct TextFieldDemo: View {
     @State private var viewModel = TextFieldViewModel()
 

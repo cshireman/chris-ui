@@ -7,7 +7,21 @@
 
 import SwiftUI
 
-/// A button with animated gradient background
+/// A button with animated gradient background and scale effect on press
+///
+/// This component creates visually appealing buttons with gradient backgrounds
+/// that can be fully customized. It includes built-in scale animation on press
+/// and support for icons alongside text.
+///
+/// Example:
+/// ```swift
+/// GradientButton(
+///     title: "Continue",
+///     gradient: Gradient(colors: [.orange, .pink]),
+///     icon: "arrow.right",
+///     action: { print("Button tapped") }
+/// )
+/// ```
 public struct GradientButton: View {
     let title: String
     let action: () -> Void
@@ -20,6 +34,17 @@ public struct GradientButton: View {
     var isDisabled: Bool = false
     var icon: String?
 
+    /// Creates a gradient button
+    /// - Parameters:
+    ///   - title: The button title text
+    ///   - gradient: The gradient colors (default: blue to purple)
+    ///   - startPoint: Gradient start point (default: leading)
+    ///   - endPoint: Gradient end point (default: trailing)
+    ///   - cornerRadius: Corner radius of the button (default: 12)
+    ///   - height: Optional fixed height (default: nil, uses padding)
+    ///   - isDisabled: Whether the button is disabled (default: false)
+    ///   - icon: Optional SF Symbol name to display before the title
+    ///   - action: Callback executed when the button is tapped
     public init(
         title: String,
         gradient: Gradient = Gradient(colors: [.blue, .purple]),
