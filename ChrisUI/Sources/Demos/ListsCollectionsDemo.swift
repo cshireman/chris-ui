@@ -300,8 +300,6 @@ struct ReorderableListDemo: View {
                         .foregroundStyle(.secondary)
                 }
                 Spacer()
-                Image(systemName: "line.3.horizontal")
-                    .foregroundStyle(.secondary)
             }
         }
         .navigationTitle("Reorderable List")

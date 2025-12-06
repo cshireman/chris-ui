@@ -86,9 +86,6 @@ public struct ReorderableList<Item: Identifiable, Content: View>: View {
                         }
 
                         Spacer()
-
-                        Image(systemName: "line.3.horizontal")
-                            .foregroundStyle(.secondary)
                     }
                 } onMove: { from, to in
                     items.move(fromOffsets: from, toOffset: to)
