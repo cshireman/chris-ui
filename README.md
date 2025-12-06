@@ -10,7 +10,7 @@ A comprehensive SwiftUI component library designed to accelerate iOS app develop
 
 ChrisUI provides a rich collection of 50+ reusable SwiftUI components that follow Apple's Human Interface Guidelines and modern SwiftUI best practices. Each component is fully documented, accessible, and supports both light and dark modes.  This is a library, so each of the components are meant to be copied to your project directly for customization.  This is not a framework that you import into your project.
 
-![screenshots](./screenshots/output.gif)
+<img src="screenshots/output.gif" alt="Screenshots" width="300">
 
 ## Features
 
